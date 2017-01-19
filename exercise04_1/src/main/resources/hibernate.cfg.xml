@@ -24,5 +24,9 @@
 		<!-- Mapping files -->
 		<mapping class="edu.mum.cs.cs544.exercises.Employee" />
 		<mapping class="edu.mum.cs.cs544.exercises.Laptop" />
+		<mapping class="edu.mum.cs.cs544.exercises.Passenger" />
+		<mapping class="edu.mum.cs.cs544.exercises.Flight" />
+		<mapping class="edu.mum.cs.cs544.exercises.Student" />
+		<mapping class="edu.mum.cs.cs544.exercises.School" />
 	</session-factory>
 </hibernate-configuration>

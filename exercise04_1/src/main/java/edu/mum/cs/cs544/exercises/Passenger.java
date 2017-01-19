@@ -1,6 +1,7 @@
 package edu.mum.cs.cs544.exercises;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -18,10 +19,32 @@ public class Passenger {
 	private String name;
 	
 	@OneToMany(cascade=CascadeType.PERSIST, mappedBy="passenger")
-	@OrderColumn(name="sequence")
-	private List<Flight> flights=new ArrayList();
+	@OrderColumn(name="flight_sequence")
+	private List<Flight> flights=new ArrayList<Flight>();
 	
 	
+	public Passenger(){
+		
+	}
+	
+	
+	
+	public Passenger(String name) {
+		
+		this.name = name;
+	}
+
+
+
+	public List<Flight> getFlights() {
+		return Collections.unmodifiableList(flights);
+	}
+
+	public void addFlights(Flight flight) {
+		flight.setPassenger(this);
+		this.flights.add(flight);
+	}
+
 	public int getId() {
 		return id;
 	}

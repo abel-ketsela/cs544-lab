@@ -27,9 +27,20 @@ public class Flight {
 	@ManyToOne
 	private Passenger passenger; 
 	
+	public Flight(){
+		
+	}
 	
 	
-	
+	public Flight(String flightnumber, String from, String to, Date date) {
+		super();
+		this.flightnumber = flightnumber;
+		this.from = from;
+		this.to = to;
+		this.date = date;
+	}
+
+
 	public int getId() {
 		return id;
 	}
@@ -57,6 +68,14 @@ public class Flight {
 	}
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public Passenger getPassenger() {
+		return passenger;
+	}
+
+	public void setPassenger(Passenger passenger) {
+		this.passenger = passenger;
 	}
 	
 	

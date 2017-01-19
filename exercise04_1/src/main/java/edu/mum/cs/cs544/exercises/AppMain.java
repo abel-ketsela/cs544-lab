@@ -1,5 +1,7 @@
 package edu.mum.cs.cs544.exercises;
 
+import java.util.Date;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -33,6 +35,24 @@ public class AppMain {
 	 		Laptop laptop=new Laptop("DELL","D55");
 	 		employee.addLaptop(laptop);
 	 		session.persist(employee);
+	 		
+	 		Flight flight1=new Flight("ET123","Addis Ababa","New York",new Date());
+	 		Flight flight2=new Flight("ET456","New York","Addis Ababa",new Date());
+
+	 		Passenger passenger =new Passenger("Abel Ketsela");
+	 		passenger.addFlights(flight1);
+	 		passenger.addFlights(flight2);
+	 		session.persist(passenger);
+	 		
+	 		Student student1=new Student("985440","Abel","Yitayew");
+	 		Student student2=new Student("988965","Bob","Alice");
+	 		
+	 		School school=new School("MUM");
+	 		school.addStudents(student1);
+	 		school.addStudents(student2);
+	 		
+	 		session.persist(school);
+	 		
 	 		
 	 		
 	 	
