@@ -8,11 +8,13 @@
      http://www.springframework.org/schema/aop 
      http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
-
+	<aop:aspectj-autoproxy/>
 	<bean id="customerService" class="cs544.exercise13_1.CustomerService">
 		<property name="customerDAO" ref="customerDAO" />
 		<property name="emailSender" ref="emailSender" />
 	</bean>
 	<bean id="customerDAO"  class="cs544.exercise13_1.CustomerDAO" />
 	<bean id="emailSender"  class="cs544.exercise13_1.EmailSender" />
+	<bean id="loggingAspect"  class="cs544.exercise13_1.LoggingAspect" />
+	<bean id="timeAspect"  class="cs544.exercise13_1.TimeAspect" />
 </beans>
