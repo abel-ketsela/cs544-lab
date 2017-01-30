@@ -10,9 +10,10 @@ public class Customer {
 	@GeneratedValue
 	private int id;
 	private String name;
-
-	public Customer() {
-
+	
+	public Customer()
+	{
+		
 	}
 
 	public Customer(String name) {
@@ -26,5 +27,6 @@ public class Customer {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 
 }
